@@ -1,0 +1,16 @@
+resources:
+  - type: storage.v1.bucket
+    name: sls-sample-service-dev-1564115607222
+  - type: cloudfunctions.v1beta2.function
+    name: sample-service-dev-first
+    properties:
+      location: us-central1
+      availableMemoryMb: 256
+      runtime: go111
+      timeout: 60s
+      function: Hello
+      sourceArchiveUrl: >-
+        gs://sls-sample-service-dev-1564115607222/serverless/sample-service/dev/1564118717940-2019-07-26T05:25:17.940Z/sample-service.zip
+      labels: {}
+      httpsTrigger:
+        url: path
